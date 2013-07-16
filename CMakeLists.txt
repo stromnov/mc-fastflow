@@ -99,13 +99,13 @@ if (CMAKE_SYSTEM_NAME MATCHES "Windows")
 endif (CMAKE_SYSTEM_NAME MATCHES "Windows")
 
 
-set( FF ${PROJECT_SOURCE_DIR}/ff/ )
+set( FF ${PROJECT_SOURCE_DIR}/ff )
 
 
 CHECK_INCLUDE_FILE("stdint.h"  HAVE_STDINT_H)
 
 if (NOT(HAVE_STDINT_H)) 
-  INCLUDE_DIRECTORIES(${FF}platforms/)
+  INCLUDE_DIRECTORIES(${FF}/platforms/)
 endif (NOT(HAVE_STDINT_H))
 
 #find_path(STDINT_INCLUDE_DIR stdint.h
@@ -151,11 +151,11 @@ set(FFHEADERS_AT
 set(FFHEADERS_D
     ${FF}/d/inter.hpp
 	${FF}/d/zmqImpl.hpp
-	${FF}/d/zmqTranport.hpp
+	${FF}/d/zmqTransport.hpp
   )
 
 set(FFHEADERS_PLAT
-    ${FF}/d/platform.h
+    ${FF}/platforms/platform.h
   )
 
 if (CMAKE_SYSTEM_NAME MATCHES "Windows")
